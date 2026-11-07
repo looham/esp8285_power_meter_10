@@ -1,0 +1,126 @@
+esphome:
+  name: esp8285_power_meter_10
+  friendly_name: esp8285_power_meter_10
+
+esp8266:
+  board: esp8285
+
+# Enable logging
+logger:
+    baud_rate: 0
+
+# 启用HomeAssistant API
+api:
+  encryption:
+    key: "ny4BYVZtlW6NkhdY1tyAoSR1+cWk0rQ/t3xoW1uXjfw=" ## 密码
+#  reboot_timeout: 30min                       ## 断网重启时间
+
+ota:
+  - platform: esphome
+    password: "e2b48dbaa5b19e4a412d3968442baebb"
+    port: 8266                                   ## 端口
+
+## 启用网页调试模式 
+web_server:                                    ##应禁用Web Server Component组件，因为设备可能会耗尽内存，并且在同时启用蓝牙这两个组件时会出现故障
+  port: 80                                     ##端口
+
+wifi:
+  ssid: "loo"                              ## WiFi SSID
+  password: "56785678"                     ## WiFi 密码
+  # use_address: 192.168.x.x                  ## 指定烧录固件时候目标设备IP，优先级高于静态IP(例如，如果您更改了静态IP并想将OTA刷新为先前配置的IP地址)
+
+  # manual_ip:                                   ## 手动配置节点静态IP
+  #   static_ip: 192.168.x.x                  ## 固定IP
+  #   gateway: 192.168.x.x                      ## 网关
+  #   subnet: 255.255.255.0                      ## 子网掩码
+  #   dns1: 223.5.5.5                            ## DNS1
+  #   dns2: 223.6.6.6                            ## DNS2
+  ap:                                          ## wifi连接失败时启用备用热点
+    ssid: "esp8285_power_meter_10"            ## WiFi SSID
+    password: "56785678"                      ## WiFi 密码
+
+## 强制门户认证
+captive_portal:                                ##连接WiFi后自动弹出认证页面
+
+external_components:
+  - source: BL0910
+      
+uart:
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 19200
+  id: utt2
+
+sensor:
+  - platform: BL0910
+    update_interval: 1s                     ##传给HA状态间隔
+    Frequency:
+      name: 'Frequency'
+    Temperature:
+      name: 'Temperature'
+    Voltage:
+      name: 'Voltage'
+    Current_1:
+      name: 'Current_1'    
+    Current_2:
+      name: 'Current_2'    
+    Current_3:
+      name: 'Current_3'    
+    Current_4:
+      name: 'Current_4'    
+    Current_5:
+      name: 'Current_5'    
+    Current_6:
+      name: 'Current_6'  
+    Current_7:
+      name: 'Current_7'  
+    Current_8:
+      name: 'Current_8'  
+    Current_9:
+      name: 'Current_9'  
+    Current_10:
+      name: 'Current_10'  
+    Power_1:
+      name: 'Power_1'
+    Power_2:
+      name: 'Power_2'
+    Power_3:
+      name: 'Power_3'
+    Power_4:
+      name: 'Power_4'
+    Power_5:
+      name: 'Power_5'      
+    Power_6:
+      name: 'Power_6'
+    Power_7:
+      name: 'Power_7'
+    Power_8:
+      name: 'Power_8'
+    Power_9:
+      name: 'Power_9'
+    Power_10:
+      name: 'Power_10'
+    Power_sum:
+      name: 'Power_sum'      
+    Energy_1: 
+      name: 'Energy_1'
+    Energy_2: 
+      name: 'Energy_2'
+    Energy_3: 
+      name: 'Energy_3'
+    Energy_4: 
+      name: 'Energy_4'
+    Energy_5: 
+      name: 'Energy_5'
+    Energy_6: 
+      name: 'Energy_6' 
+    Energy_7: 
+      name: 'Energy_7' 
+    Energy_8: 
+      name: 'Energy_8' 
+    Energy_9: 
+      name: 'Energy_9' 
+    Energy_10: 
+      name: 'Energy_10' 
+    Energy_sum: 
+      name: 'Energy_sum'
