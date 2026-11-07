@@ -87,57 +87,57 @@ CONFIG_SCHEMA = (
             unit_of_measurement = "A"  
             ),
             cv.Optional("Power_1"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_2"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_3"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_4"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_5"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_6"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_7"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_8"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_9"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_10"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
             cv.Optional("Power_sum"): sensor.sensor_schema(
-            accuracy_decimals = 3,
+            accuracy_decimals = 0,
             device_class = "power",
             unit_of_measurement = "W" 
             ),
